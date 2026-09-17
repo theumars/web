@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <canvas id="codeCanvas" aria-hidden="true"></canvas>
     <div class="app-container">
         <!-- Main Card Container (1200px x 850px exact requirement viewport centered) -->
         <main class="portfolio-card">
@@ -62,7 +63,7 @@
                             <div class="icon-box"><i class="fa-solid fa-headphones-simple"></i></div>
                             <div class="interest-info">
                                 <h3>Müzik Dinlemek</h3>
-                                <p>Odaklanma müzikleri</p>
+                                <p>Odaklanma müzikleri ve dijital prodüksiyon</p>
                             </div>
                         </div>
                     </div>
@@ -70,11 +71,19 @@
 
                 <div class="contact-block">
                     <h2>İletişim</h2>
-                    <a href="mailto:uyelkenci34@gmail.com" class="email-link">
-                        <i class="fa-regular fa-envelope"></i>
-                        <span>uyelkenci34@gmail.com</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
-                    </a>
+                    <div class="contact-links">
+                        <a href="mailto:uyelkenci34@gmail.com" class="email-link">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>uyelkenci34@gmail.com</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+                        </a>
+                        <a href="https://wa.me/?text=Merhaba%20Umut%2C%20portfolyo%20siten%20üzerinden%20ulaşıyorum."
+                           class="whatsapp-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Footer with Social Icons -->
@@ -82,7 +91,8 @@
                     <div class="social-links">
                         <a href="https://github.com/theumars" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                         <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/umutweg0/"Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/umutweg0/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://codepen.io" target="_blank" aria-label="CodePen"><i class="fa-brands fa-codepen"></i></a>
                     </div>
                     <p class="copyright">&copy; 2026 Umut Arda Yelkenci. Tüm hakları saklıdır.</p>
                 </footer>
