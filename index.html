@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umut Arda Yelkenci | Portfolyo</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="codeCanvas" aria-hidden="true"></canvas>
+    <div class="app-container">
+        <!-- Main Card Container (1200px x 850px exact requirement viewport centered) -->
+        <main class="portfolio-card">
+            
+            <!-- Left Side: Profile & Avatar -->
+            <section class="profile-section">
+                <div class="avatar-wrapper">
+                    <img src="umutarda.jpg" alt="Umut Arda Yelkenci" class="profile-img">
+                    <div class="status-badge" title="Aktif Çalışıyor">
+                        <span class="status-dot"></span>
+                    </div>
+                </div>
+                <h1 class="name">Umut Arda Yelkenci</h1>
+                <p class="title">Web Tasarım & Yazılım</p>
+                <div class="location-tag">
+                    <i class="fa-solid fa-location-dot"></i> İstanbul, Türkiye
+                </div>
+            </section>
+
+            <!-- Right Side: Bio, Interests, Contact & Footer -->
+            <section class="content-section">
+                <div class="bio-block">
+                    <h2>Hakkımda</h2>
+                    <p>16 yaşında, <strong>Bilişim Teknolojileri</strong> bölümü öğrencisiyim. Modern web tasarımları, kullanıcı deneyimi (UX/UI) ve yazılım geliştirme konularına tutkuyla odaklanıyorum. Fikirleri estetik ve performanslı dijital deneyimlere dönüştürmeyi seviyorum.</p>
+                </div>
+
+                <div class="interests-block">
+                    <h2>İlgi Alanları</h2>
+                    <div class="interests-grid">
+                        <div class="interest-card">
+                            <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+                            <div class="interest-info">
+                                <h3>Bilgisayar & Teknolojisi</h3>
+                                <p>Donanım, sistem optimizasyonu ve kodlama</p>
+                            </div>
+                        </div>
+
+                        <div class="interest-card">
+                            <div class="icon-box"><i class="fa-solid fa-film"></i></div>
+                            <div class="interest-info">
+                                <h3>Film & Sinema</h3>
+                                <p>Sinematografi, bilim kurgu ve analizler</p>
+                            </div>
+                        </div>
+
+                        <div class="interest-card">
+                            <div class="icon-box"><i class="fa-solid fa-headphones-simple"></i></div>
+                            <div class="interest-info">
+                                <h3>Müzik Dinlemek</h3>
+                                <p>Odaklanma müzikleri ve dijital prodüksiyon</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-block">
+                    <h2>İletişim</h2>
+                    <div class="contact-links">
+                        <a href="mailto:uyelkenci34@gmail.com" class="email-link">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>uyelkenci34@gmail.com</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+                        </a>
+                        <a href="https://wa.me/?text=Merhaba%20Umut%2C%20portfolyo%20siten%20üzerinden%20ulaşıyorum."
+                           class="whatsapp-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer with Social Icons -->
+                <footer class="footer">
+                    <div class="social-links">
+                        <a href="https://github.com/theumars" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/umutweg0/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://codepen.io" target="_blank" aria-label="CodePen"><i class="fa-brands fa-codepen"></i></a>
+                    </div>
+                    <p class="copyright">&copy; 2026 Umut Arda Yelkenci. Tüm hakları saklıdır.</p>
+                </footer>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

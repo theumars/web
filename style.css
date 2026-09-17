@@ -1,0 +1,545 @@
+/* Reset & Base Setup */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* No outer scrolling */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #0f172a; /* Dark sleek slate background */
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Background Ambient Glows */
+body::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+    top: -100px;
+    left: -100px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, rgba(15, 23, 42, 0) 70%);
+    bottom: -100px;
+    right: -100px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* App Container for perfect centering */
+.app-container {
+    position: relative;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Fixed Single Screen Layout Container (1200px x 850px) */
+.portfolio-card {
+    width: 1200px;
+    height: 750px;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    display: table;
+    table-layout: fixed;
+    overflow: hidden;
+}
+
+/* Left & Right Layout using Table Cell for WeasyPrint/Classic Display compatibility */
+.profile-section {
+    display: table-cell;
+    width: 380px;
+    height: 100%;
+    vertical-align: middle;
+    background: rgba(15, 23, 42, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.content-section {
+    display: table-cell;
+    width: 820px;
+    height: 100%;
+    vertical-align: top;
+    padding: 50px 60px;
+}
+
+/* Profile Photo & Avatar Styling */
+.avatar-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 30px auto;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Smooth Hover Effect for Profile Picture */
+.avatar-wrapper:hover .profile-img {
+    transform: scale(1.06);
+    border-color: #6366f1;
+    box-shadow: 0 0 35px rgba(99, 102, 241, 0.5);
+}
+
+.status-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    width: 22px;
+    height: 22px;
+    background-color: #0f172a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #10b981;
+}
+
+/* Profile Details */
+.name {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #818cf8;
+    background: rgba(99, 102, 241, 0.1);
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    margin-bottom: 20px;
+}
+
+.location-tag {
+    font-size: 13px;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.location-tag i {
+    color: #f43f5e;
+}
+
+/* Right Content Blocks */
+h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #64748b;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.bio-block {
+    margin-bottom: 35px;
+}
+
+.bio-block p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #cbd5e1;
+    font-weight: 300;
+}
+
+.bio-block strong {
+    color: #f8fafc;
+    font-weight: 600;
+}
+
+/* Interests Block Cards */
+.interests-block {
+    margin-bottom: 35px;
+}
+
+.interests-grid {
+    display: block;
+}
+
+.interest-card {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.interest-card:hover {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateX(6px);
+}
+
+.interest-card .icon-box {
+    float: left;
+    width: 42px;
+    height: 42px;
+    background: rgba(99, 102, 241, 0.12);
+    color: #818cf8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 16px;
+}
+
+.interest-info h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 2px;
+}
+
+.interest-info p {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* Clearfix for float */
+.interest-card::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Contact Link */
+.contact-block {
+    margin-bottom: 40px;
+}
+
+.email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    padding: 12px 22px;
+    border-radius: 12px;
+    color: #f8fafc;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.email-link i {
+    color: #818cf8;
+}
+
+.email-link .arrow-icon {
+    font-size: 12px;
+    color: #64748b;
+    transition: transform 0.3s ease;
+}
+
+.email-link:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(168, 85, 247, 0.3) 100%);
+    border-color: #818cf8;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+.email-link:hover .arrow-icon {
+    transform: translate(2px, -2px);
+    color: #ffffff;
+}
+
+/* Footer Section */
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 14px;
+}
+
+.social-links a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+    background: #6366f1;
+    border-color: #6366f1;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+.copyright {
+    font-size: 12px;
+    color: #64748b;
+}
+
+
+/* SADECE DÜZELTME KATMANI: mevcut masaüstü tasarımı değiştirilmez. */
+#codeCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: .24;
+}
+
+.app-container,
+.portfolio-card {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    border: 1px solid rgba(16, 185, 129, .28);
+    background: rgba(16, 185, 129, .10);
+    color: #f8fafc;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all .3s ease;
+}
+
+.whatsapp-link i:first-child {
+    color: #34d399;
+}
+
+.whatsapp-link .arrow-icon {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.whatsapp-link:hover {
+    border-color: #34d399;
+    background: rgba(16, 185, 129, .18);
+    box-shadow: 0 0 20px rgba(16, 185, 129, .16);
+}
+
+/* Mobilde yalnızca taşma ve görünürlük düzeltilir. */
+@media (max-width: 700px) {
+    html, body {
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: block;
+    }
+
+    .app-container {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        display: block;
+        padding: 10px;
+    }
+
+    .portfolio-card {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        display: block;
+        overflow: hidden;
+        border-radius: 22px;
+    }
+
+    .profile-section,
+    .content-section {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .profile-section {
+        padding: 32px 20px 28px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .content-section {
+        padding: 30px 22px 24px;
+    }
+
+    .avatar-wrapper {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto 26px;
+    }
+
+    .profile-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 24%;
+    }
+
+    .name {
+        font-size: 25px;
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+    }
+
+    .title {
+        font-size: 13px;
+        padding: 6px 13px;
+    }
+
+    .bio-block p {
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+    .interest-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .interest-card .icon-box {
+        float: none;
+        flex: 0 0 42px;
+        margin-right: 0;
+    }
+
+    .interest-card::after {
+        display: none;
+    }
+
+    .interest-info {
+        min-width: 0;
+    }
+
+    .interest-info h3,
+    .interest-info p {
+        overflow-wrap: anywhere;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .email-link,
+    .whatsapp-link {
+        width: 100%;
+        min-width: 0;
+        justify-content: flex-start;
+        font-size: 12px;
+        padding: 12px 14px;
+    }
+
+    .email-link span,
+    .whatsapp-link span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .copyright {
+        font-size: 10px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 380px) {
+    .app-container {
+        padding: 6px;
+    }
+
+    .content-section {
+        padding: 26px 16px 20px;
+    }
+
+    .avatar-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    .name {
+        font-size: 22px;
+    }
+}
